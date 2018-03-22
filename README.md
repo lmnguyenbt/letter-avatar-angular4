@@ -1,6 +1,6 @@
 <h2>
 	For the latest Angular, added letter-avatar directive, use for the latest angular2 or above versions
-<h2>
+</h2>
 
 AngularJS directive for simple data avatar like gmail/inbox. 
 <a href="https://github.com/lmnguyenbt/letter-avatar-angular4">demo</a>
