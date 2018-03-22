@@ -1,0 +1,66 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>&#9776;</button>
+    <a class="navbar-brand" [routerLink]="['/dashboard']"></a>
+    <button class="navbar-toggler d-md-down-none" type="button" appSidebarToggler>&#9776;</button>
+
+    <ul class="nav navbar-nav ml-auto" style="padding-right: 30px;">
+        <li>
+            <form class="form-inline form-location" [formGroup]="locationForm">
+                <label for="">{{'commons.type' | translate}}</label>
+                <select class="form-control " formControlName="loc_type" style="width:100px"  name="type" [attr.disabled]="typeInvalid"
+                (change)="onChangeTypeToGetWorkplace()">
+                    <option [ngValue]=null disabled="true" >Select</option>
+                    <option *ngFor="let st of lstMasterData['typeList']" [ngValue]="st.id">{{st.value}}</option>
+                </select>
+                <label for="">{{'commons.workplace' | translate}}</label>
+                <select class="form-control " formControlName="ac_loc_id" style="width:100px" name="workplace"
+                (change)="onChangeWorkplace()" [attr.disabled]="workPlaceInvalid">
+                    <option [ngValue]=null disabled="true" >Select</option>
+                    <option *ngFor="let st of lstMasterData['location']" [ngValue]="st.item_id">{{st.name}}</option>
+                </select>
+            </form>
+        </li>
+        <li class="nav-item d-md-down-none dropdown" dropdown (onToggle)="toggled($event)">
+            <a href class="nav-link" dropdownToggle (click)="false">
+                <i class="icon-bell text-cursor" (click)="showNotification()"></i>
+                <span class="badge badge-pill badge-danger">{{countNotifitication}}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right bell-notify" *dropdownMenu aria-labelledby="simple-dropdown">
+                <ul>
+                    <li *ngFor="let notify of lstMessage">
+                        <div class="row">
+                            <div class="col-md-2 pad-r-none">
+                                <avatar style="display: inline-block;" *ngIf="notify.ntf_by_user_image == null" [avatarData]="avatarCircle" [nameData]="notify.ntf_by_user_name"></avatar>
+                                <!--<img *ngIf="currentUser.image == null" src="assets/img/avatars/user-default.png" class="img">-->
+                                <img *ngIf="notify.ntf_by_user_image != null" src="{{notify.ntf_by_user_image}}" class="img-avatar img">
+                            </div>
+                            <div class="col-md-10 pad-left10px">
+                                <p>{{notify.message}}</p>
+                                <p>{{notify.ntf_dt}}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
+            <a href class="nav-link dropdown-toggle" dropdownToggle (click)="false">
+
+                <avatar style="display: inline-block;" *ngIf="currentUser.image == null" [avatarData]="avatarCircle"></avatar>
+                <!--<img *ngIf="currentUser.image == null" src="assets/img/avatars/user-default.png" class="img-avatar">-->
+                <img *ngIf="currentUser.image != null" src="{{currentUser.image}}" class="img-avatar">
+                <span class="d-md-down-none">{{currentUser.full_name}}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+                <div class="dropdown-header text-center">
+                    <strong>{{'commons.settings' | translate}}</strong>
+                </div>
+                <a [routerLink]="['/user-profile', currentUser.user_id]" class="dropdown-item">
+                    <i class="fa fa-user"></i> {{'commons.profile' | translate}}</a>
+                <a (click)="logout()" class="dropdown-item">
+                    <i class="fa fa-lock"></i> {{'commons.logout' | translate}}</a>
+            </div>
+        </li>
+    </ul>
+</header>
