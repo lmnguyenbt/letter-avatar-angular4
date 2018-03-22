@@ -10,8 +10,6 @@ preview snaps :
 ![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/demo1.png)
 ![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/demo2.png)
 ![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/numbers.png)
-![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/avatar_border1.png)
-![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/avatar_border2.png)
 
 * [Directive](#directive)
 * [SharedModule](#shared-modules)
