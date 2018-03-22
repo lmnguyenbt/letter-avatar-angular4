@@ -1,9 +1,27 @@
-# AngularJS
+<h2>
+	For the latest Angular, added letter-avatar directive, use for the latest angular2 or above versions
+<h2>
+
+AngularJS directive for simple data avatar like gmail/inbox. 
+<a href="https://github.com/lmnguyenbt/letter-avatar-angular4">demo</a>
+
+preview snaps :
+ 
+![demo](https://raw.github.com/lmnguyenbt/letter-avatar-angular4/master/demo/demo1.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/demo2.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/numbers.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/special_charaters.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/chinese.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/kannada.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/round_shape_digit_special.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/round_chinese_kannada.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/avatar_border1.png)
+![demo](https://raw.github.com/uttesh/ngletteravatar/master/demo/avatar_border2.png)
 
 * [Directive](#directive)
 * [SharedModule](#shared-modules)
 * [Usage](#usage)
-* [Use HTML tags] (#use HTML tags)
+* [UseHTMLtags] (#use HTML tags)
 
 #### 1. Directive
 
